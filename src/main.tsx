@@ -5,7 +5,7 @@ import Landing from './pages/Landing.tsx'
 import './index.css'
 
 // Simple placeholders (not used in main flow)
-function AuthPage({ redirectAfterAuth }: { redirectAfterAuth: string }) {
+function AuthPage() {
   return <div className="p-8 text-green-400">Auth Page (placeholder)</div>
 }
 function NotFound() {
@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
