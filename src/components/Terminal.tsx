@@ -69,131 +69,100 @@ const DEFAULT_THEMES: Theme[] = [
 
 const COMMANDS = {
   help: `Available commands:
-  help       - Show this help message
-  about      - Professional summary
-  skills     - Technical skills and tools
-  projects   - Featured projects
+  help - Show this help message
+  about - Professional summary
+  skills - Technical skills and tools
+  projects - Featured projects
   experience - Work experience and internships
-  education  - Academic background
-  contact    - Contact information
-  awards     - Honors and achievements
-  interests  - Personal interests
-  theme      - Switch or list terminal themes (use 'theme color' for custom)
-  clear      - Clear terminal history`,
-
+  education - Academic background
+  contact - Contact information
+  awards - Honors and achievements
+  interests - Personal interests
+  theme - Switch or list terminal themes (use 'theme color' for custom)
+  clear - Clear terminal history`,
   about: `PRAMOD KUMAR MARRI
 AI/ML Engineer
-
-Enthusiastic AI/ML Engineer skilled in building LLM and multimodal AI 
-applications using Python, FastAPI, and LangChain, with hands-on experience 
+Enthusiastic AI/ML Engineer skilled in building LLM and multimodal AI
+applications using Python, FastAPI, and LangChain, with hands-on experience
 in prompt engineering and retrieval-augmented generation (RAG).
-
-Recently completed B.Tech in Artificial Intelligence & Machine Learning at 
+Recently completed B.Tech in Artificial Intelligence & Machine Learning at
 Sagi Rama Krishnam Raju Engineering College (CGPA: 8.4/10.0)`,
-
   skills: `TECHNICAL SKILLS
-
 Programming Languages:
   • C, Java, Python, Go
-
 Frameworks & Libraries:
   • FastAPI, LangChain, TensorFlow, Keras, Scikit-learn
-
 Web Technologies:
   • HTML, CSS, JavaScript
-
 Databases:
   • MySQL, Vector Databases (ChromaDB)
-
 Tools & Platforms:
   • VS Code, Google Colab, Git, GitHub
-
 AI Tools:
   • OpenAI API, Hugging Face, Gemini API
-
 Data & Visualization:
   • Pandas, NumPy, Matplotlib, Seaborn, Tableau`,
-
   projects: `FEATURED PROJECTS
-
 1. Book Recommender System (NLP, Vector Search, LangChain)
    • Designed content-based recommender using embeddings from Hugging Face
    • Implemented RAG pipeline with ChromaDB for vector search
    • Achieved cosine similarity score of 0.83
-
 2. Video Insight Mapping Application (LLMs, Full Stack & AI Integration)
    • Built video analysis app using OpenAI Whisper for transcription
    • Integrated FastAPI backend with React frontend
    • Added keypoint summarization using Gemini API with context-aware prompts
-
 3. Robust Classification Model (Machine Learning)
    • Built Random Forest model improving F1 score by 14% over baseline
    • Conducted comprehensive EDA and feature engineering
    • Performed thorough performance evaluation and optimization`,
-
   experience: `WORK EXPERIENCE
-
 EduSkills Foundation | Intern
 Jan 2025 - Feb 2025
   • Built and optimized CNN models for image classification and object detection
   • Developed preprocessing pipelines (data cleaning, augmentation, normalization)
   • Completed hands-on labs on CNNs, model evaluation, and error analysis
-
 Blackbucks Engineers | AI/ML Intern
 July 2024 - Sep 2024
   • Developed CNN classifier on CIFAR-10 achieving 83% accuracy
   • Applied hyperparameter tuning, dropout, and batch normalization
   • Collaborated in 4-member team, streamlining preprocessing workflow
-
 Henotic Technologies Pvt. Ltd. | Machine Learning Intern
 June 2023 - Sep 2023
   • Built supervised ML models for classification & regression (50k+ entries)
   • Conducted EDA and feature engineering, reducing error rates by 18%
   • Contributed to predictive analytics solutions for client datasets`,
-
   education: `EDUCATION
-
 Sagi Rama Krishnam Raju Engineering College, Bhimavaram, India
 Bachelor of Technology
 Artificial Intelligence & Machine Learning
 Aug 2021 – May 2025 | CGPA: 8.4/10.0
-
 Key Courses:
   • Data Structures & Algorithms
   • Machine Learning
   • Deep Learning
   • Natural Language Processing
-
 CERTIFICATIONS:
   • Prompt Engineering - Columbia Plus (Aug 2025)
   • Databases for Developers Foundations - Oracle Dev Gym (Jan 2025)`,
-
   contact: `CONTACT INFORMATION
-
-Email:     pramodkumarmarri711@gmail.com
-Mobile:    +91-7842322116
-LinkedIn:  https://linkedin.com/in/pramod-kumar-marri-a1936225a/
-GitHub:    https://github.com/pramod-27/
-
+Email: pramodkumarmarri711@gmail.com
+Mobile: +91-7842322116
+LinkedIn: https://linkedin.com/in/pramod-kumar-marri-a1936225a/
+GitHub: https://github.com/pramod-27/
 Feel free to reach out for collaboration, opportunities, or just to connect!`,
-
   awards: `HONORS AND ACHIEVEMENTS
-
 🏆 4th Prize - Hackoverflow Hackathon
    SRKREC | October 2023
-   
-   Demonstrated problem-solving and technical skills in competitive 
+  
+   Demonstrated problem-solving and technical skills in competitive
    hackathon environment.`,
-
   interests: `PERSONAL INTERESTS
-
 • Team Leadership - Leading and collaborating with diverse teams
 • Problem Solving - Tackling complex challenges with creative solutions
 • Competitive Coding - Participating in coding competitions
 • Basketball - Active player and sports enthusiast
 • Music - Enjoying and exploring various genres
 • Reading - Continuous learning through books and articles`,
-
   "theme add": `Custom theme support:
   To add a custom theme, type: theme add [name] [bg] [text] [prompt] [command] [output] [error] [border] [tip]
   Example: theme add mytheme bg-red-900 text-yellow-400 text-yellow-500 text-yellow-400 text-yellow-300 text-red-400 border-red-900 text-red-700
@@ -207,9 +176,7 @@ const RenderOutput = ({ text, theme }: { text: string; theme: Theme }) => {
   const emailRegex = /\S+@\S+\.\S+/g;
   const urlRegex = /https?:\/\/\S+/g;
   const phoneRegex = /\+?\d[\d\s\-]{10,}/g;
-
   const parts = text.split(/(\S+@\S+\.\S+)|(https?:\/\/\S+)|(\+?\d[\d\s\-]{10,})/g).filter(Boolean);
-
   return (
     <div className={`whitespace-pre-wrap ${theme.output}`}>
       {parts.map((part, index) => {
@@ -343,14 +310,13 @@ export default function Terminal() {
   const handleCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase();
     const parts = cmd.trim().split(/\s+/);
-    
+   
     if (trimmedCmd === "clear") {
       setHistory([]);
       setCommandHistory([]);
       setHistoryIndex(-1);
       return;
     }
-
     if (parts[0] === "theme") {
       if (parts[1] === "add") {
         // Custom theme addition: theme add [name] [bg] [text] [prompt] [command] [output] [error] [border] [tip]
@@ -400,10 +366,9 @@ export default function Terminal() {
         }, 100);
         return;
       }
-
       if (!parts[1]) {
         // List themes
-        const allThemes = themes.map(t => `  ${t.name}`).join("\n");
+        const allThemes = themes.map(t => ` ${t.name}`).join("\n");
         const output = `Current theme: ${currentTheme.name}\n\n${allThemes}`;
         setHistory((prev) => [
           ...prev,
@@ -453,7 +418,6 @@ export default function Terminal() {
         }
       }
     }
-
     let fullOutput = "";
     if (trimmedCmd === "") {
       fullOutput = "";
@@ -461,10 +425,8 @@ export default function Terminal() {
       fullOutput = COMMANDS[trimmedCmd as keyof typeof COMMANDS];
     } else {
       fullOutput = `Command not found: ${trimmedCmd}
-
 Available commands: help, about, skills, projects, experience, education, contact, awards, interests, theme, clear`;
     }
-
     setHistory((prev) => [
       ...prev,
       {
@@ -473,7 +435,6 @@ Available commands: help, about, skills, projects, experience, education, contac
         timestamp: Date.now(),
       },
     ]);
-
     setTimeout(() => {
       typeOutput(fullOutput, () => {});
     }, 100);
@@ -492,11 +453,9 @@ Available commands: help, about, skills, projects, experience, education, contac
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (isTyping) return;
-
     if (e.key === "ArrowUp") {
       e.preventDefault();
       if (commandHistory.length === 0) return;
-
       if (historyIndex === -1) {
         setHistoryIndex(commandHistory.length - 1);
         setCurrentInput(commandHistory[commandHistory.length - 1]);
@@ -508,7 +467,6 @@ Available commands: help, about, skills, projects, experience, education, contac
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
       if (commandHistory.length === 0) return;
-
       if (historyIndex === -1) {
         // Already at end, do nothing
       } else if (historyIndex < commandHistory.length - 1) {
@@ -523,10 +481,8 @@ Available commands: help, about, skills, projects, experience, education, contac
       e.preventDefault();
       const input = currentInput.trim().toLowerCase();
       if (input === "") return;
-
       const matches = commandKeys.filter((cmd) => cmd.startsWith(input));
       if (matches.length === 0) return;
-
       if (matches.length === 1) {
         setCurrentInput(matches[0] + " ");
       } else {
@@ -552,22 +508,24 @@ Available commands: help, about, skills, projects, experience, education, contac
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`min-h-screen ${currentTheme.bg} ${currentTheme.text} font-mono p-4 md:p-8`}
+      className={`flex flex-col min-h-screen w-full ${currentTheme.bg} ${currentTheme.text} font-mono p-2 sm:p-4 md:p-8`}
       onClick={handleTerminalClick}
     >
-      <div className="max-w-5xl mx-auto">
-        <div className={`mb-4 text-sm ${currentTheme.prompt}`}>
-          <div>Pramod Kumar Marri - Portfolio v1.0.0</div>
-          <div>System: Linux portfolio 5.15.0</div>
-          <div className={`border-b ${currentTheme.border} my-2`}></div>
+      <div className="w-full max-w-5xl mx-auto flex flex-col flex-1">
+        {/* Header */}
+        <div className="mb-2 sm:mb-4 text-xs sm:text-sm">
+          <div className={currentTheme.prompt}>Pramod Kumar Marri - Portfolio v1.0.0</div>
+          <div className={currentTheme.prompt}>System: Linux portfolio 5.15.0</div>
+          <div className={`border-b ${currentTheme.border} my-1 sm:my-2`}></div>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-200px)]" ref={scrollRef}>
-          <div className="pr-4">
+        {/* Scrollable Content */}
+        <ScrollArea className="flex-1 min-h-0 pr-2 sm:pr-4" ref={scrollRef}>
+          <div className="pb-4">
             {history.map((entry, index) => (
-              <div key={entry.timestamp + index} className="mb-4">
+              <div key={entry.timestamp + index} className="mb-2 sm:mb-4">
                 {entry.command && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
                     <span className="text-blue-400">guest@portfolio</span>
                     <span className="text-white">:</span>
                     <span className="text-purple-400">~</span>
@@ -576,17 +534,16 @@ Available commands: help, about, skills, projects, experience, education, contac
                   </div>
                 )}
                 {entry.output && (
-                  <div className="mt-2 text-sm leading-relaxed">
+                  <div className="mt-1 sm:mt-2 text-xs sm:text-sm leading-relaxed">
                     <RenderOutput text={entry.output} theme={currentTheme} />
                   </div>
                 )}
               </div>
             ))}
-
-            <form onSubmit={handleSubmit} className="flex items-center gap-2">
-              <span className="text-blue-400">guest@portfolio</span>
+            <form onSubmit={handleSubmit} className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
+              <span className="text-blue-400 min-w-0 flex-shrink-0">guest@portfolio</span>
               <span className="text-white">:</span>
-              <span className="text-purple-400">~</span>
+              <span className="text-purple-400 min-w-0 flex-shrink-0">~</span>
               <span className="text-white">$</span>
               <input
                 ref={inputRef}
@@ -594,18 +551,19 @@ Available commands: help, about, skills, projects, experience, education, contac
                 value={currentInput}
                 onChange={(e) => setCurrentInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className={`flex-1 bg-transparent outline-none ${currentTheme.command} caret-green-400`}
+                className={`flex-1 bg-transparent outline-none ${currentTheme.command} caret-green-400 min-w-0`}
                 autoComplete="off"
                 spellCheck={false}
                 disabled={isTyping}
               />
-              <span className="animate-pulse">▊</span>
+              <span className="animate-pulse flex-shrink-0">▊</span>
             </form>
             <div ref={endRef} />
           </div>
         </ScrollArea>
 
-        <div className={`mt-4 text-xs ${currentTheme.tip} border-t ${currentTheme.border} pt-2`}>
+        {/* Footer Tip */}
+        <div className={`mt-2 sm:mt-4 text-xs ${currentTheme.tip} border-t ${currentTheme.border} pt-1 sm:pt-2`}>
           <div>Tip: Press Tab for command autocompletion</div>
           <div>Use arrow keys to navigate command history</div>
         </div>
