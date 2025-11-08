@@ -103,14 +103,17 @@ AI Tools:
 Data & Visualization:
   • Pandas, NumPy, Matplotlib, Seaborn, Tableau`,
   projects: `FEATURED PROJECTS
-1. Book Recommender System (NLP, Vector Search, LangChain)
-   • Designed content-based recommender using embeddings from Hugging Face
-   • Implemented RAG pipeline with ChromaDB for vector search
-   • Achieved cosine similarity score of 0.83
+1. DOC Chat AI - Intelligent Document Assistant (RAG, LangChain, FastAPI) :LINK - https://doc-chat-murex.vercel.app/  
+    • Architected production-grade RAG pipeline for semantic document search, processing pdf/doc with 
+      token chunking and achieving efficient context retrieval.
+    • Built full-stack AI document chat application with real-time multi-format document processing
+      and implemented speech-to-text integration.
+
 2. Video Insight Mapping Application (LLMs, Full Stack & AI Integration)
    • Built video analysis app using OpenAI Whisper for transcription
    • Integrated FastAPI backend with React frontend
    • Added keypoint summarization using Gemini API with context-aware prompts
+
 3. Robust Classification Model (Machine Learning)
    • Built Random Forest model improving F1 score by 14% over baseline
    • Conducted comprehensive EDA and feature engineering
@@ -121,11 +124,13 @@ Jan 2025 - Feb 2025
   • Built and optimized CNN models for image classification and object detection
   • Developed preprocessing pipelines (data cleaning, augmentation, normalization)
   • Completed hands-on labs on CNNs, model evaluation, and error analysis
+
 Blackbucks Engineers | AI/ML Intern
 July 2024 - Sep 2024
   • Developed CNN classifier on CIFAR-10 achieving 83% accuracy
   • Applied hyperparameter tuning, dropout, and batch normalization
   • Collaborated in 4-member team, streamlining preprocessing workflow
+
 Henotic Technologies Pvt. Ltd. | Machine Learning Intern
 June 2023 - Sep 2023
   • Built supervised ML models for classification & regression (50k+ entries)
@@ -141,6 +146,7 @@ Key Courses:
   • Machine Learning
   • Deep Learning
   • Natural Language Processing
+
 CERTIFICATIONS:
   • Prompt Engineering - Columbia Plus (Aug 2025)
   • Databases for Developers Foundations - Oracle Dev Gym (Jan 2025)`,
@@ -159,7 +165,6 @@ Feel free to reach out for collaboration, opportunities, or just to connect!`,
   interests: `PERSONAL INTERESTS
 • Team Leadership - Leading and collaborating with diverse teams
 • Problem Solving - Tackling complex challenges with creative solutions
-• Competitive Coding - Participating in coding competitions
 • Basketball - Active player and sports enthusiast
 • Music - Enjoying and exploring various genres
 • Reading - Continuous learning through books and articles`,
