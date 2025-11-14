@@ -153,7 +153,7 @@ CERTIFICATIONS:
   contact: `CONTACT INFORMATION
 Email: pramodkumarmarri711@gmail.com
 Mobile: +91-7842322116
-LinkedIn: https://linkedin.com/in/pramod-kumar-marri-a1936225a/
+LinkedIn: https://www.linkedin.com/in/pramod-kumar-marri/
 GitHub: https://github.com/pramod-27/
 Feel free to reach out for collaboration, opportunities, or just to connect!`,
   awards: `HONORS AND ACHIEVEMENTS
